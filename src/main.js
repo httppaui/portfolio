@@ -188,3 +188,17 @@ projectCards.forEach(card => {
     }
   });
 });
+
+// Experience tabs
+const expTabs = document.querySelectorAll('.exp-tab');
+expTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    expTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+
+    document.querySelectorAll('.experience__panel').forEach(panel => {
+      panel.classList.add('hidden');
+    });
+    document.getElementById(`tab-${tab.dataset.tab}`).classList.remove('hidden');
+  });
+});
