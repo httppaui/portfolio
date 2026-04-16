@@ -54,32 +54,41 @@ The static build artifact will be output to the `dist/` folder. This folder is s
 
 ## 🌐 Deployment
 
-### GitHub Pages
+This site is deployed via **[Vercel](https://vercel.com)** on the free Hobby plan.
+
+### Steps
 
 1. Push your repository to GitHub.
-2. Run the deploy script:
-   ```bash
-   npm run deploy
-   ```
-   This uses `gh-pages` to publish the `dist/` folder to your `gh-pages` branch.
-3. In your repository settings → **Pages**, set the source branch to `gh-pages` / `root`.
-4. Your site will be live at `https://YOUR_USERNAME.github.io/portfolio/`
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+3. Click **Add New → Project** and import your `portfolio` repository.
+4. Confirm the build settings:
+   - **Framework Preset**: `Vite`
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+5. Click **Deploy**. Your site will be live in ~1 minute.
 
-> **Note**: If deploying to a subdirectory (not root domain), update the `base` field in `vite.config.js` to match your repo name, e.g. `base: '/portfolio/'`.
+Your live site will be available at:
+```
+https://portfolio-YOUR_USERNAME.vercel.app
+```
 
-### Netlify
+### Auto-Deploy
+Every push to the `main` branch automatically triggers a new deployment on Vercel — no manual steps needed.
 
-**Option A — Drag & Drop**
-1. Run `npm run build` to generate the `dist/` folder.
-2. Go to [netlify.com](https://netlify.com) → drag and drop the `dist/` folder.
+```bash
+git add .
+git commit -m "your update"
+git push origin main
+# ✅ Vercel picks it up automatically
+```
 
-**Option B — Git Integration**
-1. Push your repo to GitHub.
-2. In Netlify: **Add new site → Import from Git**.
-3. Set:
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-4. Click **Deploy site**. Netlify will auto-deploy on every push to `main`.
+### Environment Variables
+If you add API keys (e.g. for a contact form), add them in Vercel:
+1. Go to your project on Vercel → **Settings → Environment Variables**
+2. Add your key (e.g. `VITE_EMAIL_KEY`)
+3. Access it in code via `import.meta.env.VITE_EMAIL_KEY`
+
+> Never hardcode API keys directly in your source files.
 
 ---
 
@@ -101,14 +110,21 @@ docker run -p 8080:80 portfolio
 
 ```
 portfolio/
-├── index.html              # Main HTML entry point
+├── index.html                   # Main HTML entry point
 ├── src/
 │   ├── assets/
 │   │   └── css/
-│   │       └── style.css   # All styles (mobile-first)
-│   └── main.js             # Interactions, filtering, validation
-├── public/                 # Static assets (favicon, images, etc.)
-├── vite.config.js          # Build configuration
+│   │       └── style.css        # All styles (mobile-first)
+│   ├── modules/                 # Feature modules
+│   │   ├── nav.js               # Header, sticky scroll, mobile nav
+│   │   ├── projects.js          # Project filtering & keyboard nav
+│   │   ├── animations.js        # Scroll fade-in animations
+│   │   ├── form.js              # Contact form validation
+│   │   ├── experience.js        # Experience tabs
+│   │   └── gallery.js           # Lightbox, filters, lazy load
+│   └── main.js                  # Entry point — imports all modules
+├── public/                      # Static assets (favicon, images, etc.)
+├── vite.config.js               # Build configuration
 ├── package.json
 ├── Dockerfile
 └── README.md
