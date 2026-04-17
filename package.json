@@ -8,15 +8,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^8.0.8"
+    "vite": "^6.0.0"
   },
-  "keywords": [
-    "portfolio",
-    "static",
-    "html",
-    "css",
-    "javascript"
-  ],
+  "keywords": ["portfolio", "static", "html", "css", "javascript"],
   "author": "Paula Hewlett P. Pamittan",
   "license": "MIT"
 }
