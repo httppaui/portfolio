@@ -42,6 +42,25 @@
   --dur-med:  320ms;
 }
 
+/* =========================================
+   DARK MODE TOKENS
+   ========================================= */
+[data-theme="dark"] {
+  --clr-bg:        #1a1210;
+  --clr-surface:   #241c18;
+  --clr-surface-2: #2e2420;
+  --clr-accent:    #e8a07a;
+  --clr-accent-2:  #a8cdb8;
+  --clr-accent-3:  #c8946a;
+  --clr-text:      #f0e8e0;
+  --clr-text-muted:#b8a898;
+  --clr-border:    #3d3028;
+
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.3);
+  --shadow-md: 0 6px 24px rgba(0,0,0,.4);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,.5);
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
@@ -225,6 +244,35 @@ ul { list-style: none; }
   border-radius: 2px;
   transition: all var(--dur-fast) var(--ease);
 }
+
+/* =========================================
+   THEME TOGGLE BUTTON
+   ========================================= */
+.theme-toggle {
+  background: none;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-pill);
+  color: var(--clr-text);
+  cursor: pointer;
+  padding: .4rem .6rem;
+  display: flex;
+  align-items: center;
+  transition: background var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+
+.theme-toggle:hover {
+  background: var(--clr-surface-2);
+  border-color: var(--clr-accent);
+}
+
+/* Show sun in dark mode, moon in light mode */
+.theme-toggle__icon--moon { display: block; }
+.theme-toggle__icon--sun  { display: none;  }
+
+[data-theme="dark"] .theme-toggle__icon--moon { display: none;  }
+[data-theme="dark"] .theme-toggle__icon--sun  { display: block; }
+
 
 /* =========================================
    HERO
