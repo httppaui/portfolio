@@ -4,21 +4,38 @@ A polished, accessible, responsive personal portfolio site built with **vanilla 
 
 ---
 
-## ✨ Features
+## Features
 
-- **Hero section** with animated gradient blobs and staggered entrance animations
+- **Hero section** with animated gradient blobs, staggered entrance animations, and optimized LCP image
 - **About section** with bio and categorized skills grid
-- **Projects section** with category filtering (All / Academic / Professional / Design)
+- **Experience section** with tabbed Professional / Academic timeline
+- **Projects section** with category filtering and click-to-open carousel modal
 - **Certifications section** with badge cards and verification links
-- **Contact section** with validated form (name, email, message, consent checkbox)
+- **Contact section** with social links (GitHub, LinkedIn, Email)
+- **Dark / Light mode** with system preference detection and localStorage persistence
 - Mobile-first responsive design — works down to 320px viewports
-- WCAG-compliant contrast, semantic HTML, visible focus indicators, ARIA labels
-- Native lazy loading on all below-fold images
-- Smooth scroll-triggered fade-in animations via Intersection Observer
+- `prefers-reduced-motion` respected in both CSS animations and JS scroll effects
+- Open Graph and Twitter Card meta tags for social sharing
+- `<noscript>` fallback so content remains accessible without JavaScript
 
 ---
 
-## 🚀 Quick Start (Local Development)
+## Accessibility
+
+- Semantic HTML5 elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`)
+- Skip-to-content link as the first focusable element
+- All images include descriptive `alt` text
+- ARIA labels on interactive elements and live regions
+- Visible `:focus-visible` indicators on all focusable elements
+- Color contrast meets WCAG AA (4.5:1 for normal text)
+- Focus traps and `inert` page content behind lightbox and project modals
+- Keyboard-navigable project cards, gallery items, and modals (Arrow keys, Escape, Enter/Space)
+- `aria-live` regions for filter results
+- `prefers-reduced-motion: reduce` disables all animations and transitions
+
+---
+
+## Quick Start
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) v18 or higher
@@ -28,7 +45,7 @@ A polished, accessible, responsive personal portfolio site built with **vanilla 
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/httppaui/portfolio.git
 cd portfolio
 
 # 2. Install dependencies
@@ -38,122 +55,93 @@ npm install
 npm run dev
 ```
 
-The site will be available at **http://localhost:3000** (or the port shown in your terminal).
+The site will be available at **http://localhost:3000** (or the next available port).
 
 ---
 
-## 📦 Build for Production
+## Build for Production
 
 ```bash
 npm run build
 ```
 
-The static build artifact will be output to the `dist/` folder. This folder is self-contained and ready to deploy.
+The output goes to the `dist/` folder — self-contained and ready to deploy.
 
 ---
 
-## 🌐 Deployment
+## Deployment
 
 This site is deployed via **[Vercel](https://vercel.com)** on the free Hobby plan.
 
-### Steps
-
 1. Push your repository to GitHub.
 2. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
-3. Click **Add New → Project** and import your `portfolio` repository.
+3. Click **Add New → Project** and import the `portfolio` repository.
 4. Confirm the build settings:
    - **Framework Preset**: `Vite`
    - **Build Command**: `npm run build`
    - **Output Directory**: `dist`
-5. Click **Deploy**. Your site will be live in ~1 minute.
+5. Click **Deploy**.
 
-Your live site will be available at:
-```
-https://portfolio-YOUR_USERNAME.vercel.app
-```
-
-### Auto-Deploy
-Every push to the `main` branch automatically triggers a new deployment on Vercel — no manual steps needed.
-
-```bash
-git add .
-git commit -m "your update"
-git push origin main
-# ✅ Vercel picks it up automatically
-```
-
-### Environment Variables
-If you add API keys (e.g. for a contact form), add them in Vercel:
-1. Go to your project on Vercel → **Settings → Environment Variables**
-2. Add your key (e.g. `VITE_EMAIL_KEY`)
-3. Access it in code via `import.meta.env.VITE_EMAIL_KEY`
-
-> Never hardcode API keys directly in your source files.
+Every push to `main` triggers an automatic redeployment.
 
 ---
 
-## 🐳 Docker (Optional)
-
-If Docker is available on your machine:
+## Docker (Optional)
 
 ```bash
-# Build the Docker image
+# Build the image
 docker build -t portfolio .
 
 # Run the container (serves on http://localhost:8080)
 docker run -p 8080:80 portfolio
 ```
 
+The Dockerfile uses a multi-stage build (Node → nginx) with gzip compression.
+
 ---
 
-## 🗂 Project Structure
+## Project Structure
 
 ```
 portfolio/
-├── index.html                   # Main HTML entry point
+├── index.html                    # Main HTML entry point
 ├── src/
 │   ├── assets/
-│   │   └── css/
-│   │       └── style.css        # All styles (mobile-first)
-│   ├── modules/                 # Feature modules
-│   │   ├── nav.js               # Header, sticky scroll, mobile nav
-│   │   ├── projects.js          # Project filtering & keyboard nav
-│   │   ├── animations.js        # Scroll fade-in animations
-│   │   ├── form.js              # Contact form validation
-│   │   ├── experience.js        # Experience tabs
-│   │   └── gallery.js           # Lightbox, filters, lazy load
-│   └── main.js                  # Entry point — imports all modules
-├── public/                      # Static assets (favicon, images, etc.)
-├── vite.config.js               # Build configuration
-├── package.json
+│   │   ├── css/
+│   │   │   └── style.css         # All styles (design tokens, dark mode, responsive)
+│   │   ├── images/               # Local logos, photos, project screenshots
+│   │   ├── gallery/              # Gallery section images
+│   │   └── docs/                 # Certificate PDFs
+│   ├── modules/
+│   │   ├── nav.js                # Header, sticky scroll, mobile nav
+│   │   ├── theme.js              # Dark / light mode toggle
+│   │   ├── projects.js           # Project category filtering
+│   │   ├── project-modal.js      # Carousel modal for project details
+│   │   ├── animations.js         # Scroll fade-in (CSS class driven)
+│   │   ├── experience.js         # Experience tab switching
+│   │   └── gallery.js            # Gallery lightbox, filters, focus trap
+│   └── main.js                   # Entry point — imports all modules
+├── .dockerignore
+├── .gitignore
 ├── Dockerfile
+├── package.json
+├── package-lock.json
 └── README.md
 ```
 
 ---
 
-## 🎨 Customization
+## Customization
 
-1. **Name & tagline**: Edit the `<h1>`, `<p class="hero__role">`, and `<p class="hero__tagline">` in `index.html`.
-2. **Colors**: Adjust CSS custom properties at the top of `style.css` under `:root`.
-3. **Projects**: Add or edit `<article class="project-card" data-category="...">` blocks in the Projects section.
-4. **Certifications**: Add or edit `<div class="cert-badge">` blocks in the Certifications section.
-5. **Social links**: Update the `href` attributes in the Contact section's `.contact__socials` list.
-
----
-
-## ♿ Accessibility
-
-- Semantic HTML5 elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`)
-- All images include descriptive `alt` text
-- ARIA labels on interactive elements and live regions
-- Visible focus indicators on all focusable elements
-- Color contrast meets WCAG AA (4.5:1 for normal text)
-- Keyboard-navigable project cards
-- `aria-live` regions for form errors and filter results
+1. **Name & tagline** — Edit `<h1>`, `.hero__role`, and `.hero__tagline` in `index.html`.
+2. **Colors** — Adjust CSS custom properties under `:root` and `[data-theme="dark"]` in `style.css`.
+3. **Projects** — Add `<article class="project-card">` blocks with a `data-images` JSON array for carousel photos.
+4. **Certifications** — Add `<div class="cert-badge">` blocks in the Certifications section.
+5. **Social links** — Update the `href` attributes in `.contact__socials`.
+6. **OG / Twitter meta** — Update `og:image` and `twitter:image` to absolute URLs after deploying.
 
 ---
 
-## 📄 License
+## License
 
 MIT — free to use and adapt for your own portfolio.
