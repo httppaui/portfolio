@@ -4,7 +4,8 @@
 
 export function initAnimations() {
 
-  // ─── Intersection Observer — fade-in on scroll ───
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const fadeEls = document.querySelectorAll(
     '.project-card, .cert-badge, .skill-category, .about__text, .contact__info'
   );
@@ -12,17 +13,15 @@ export function initAnimations() {
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add('is-visible');
         fadeObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
   fadeEls.forEach((el, i) => {
-    el.style.opacity   = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = `opacity 0.5s ${i * 0.04}s ease, transform 0.5s ${i * 0.04}s ease`;
+    el.classList.add('fade-in');
+    el.style.transitionDelay = `${i * 0.04}s`;
     fadeObserver.observe(el);
   });
 

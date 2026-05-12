@@ -4,17 +4,15 @@
 
 export function initNav() {
 
-  // ─── Year ───────────────────────────────
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // ─── Sticky header shadow ────────────────
   const header = document.querySelector('.site-header');
+  if (!header) return;
+
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 10);
   window.addEventListener('scroll', onScroll, { passive: true });
 
-  // ─── Mobile nav toggle ───────────────────
   const navToggle = document.querySelector('.nav__toggle');
   const navLinks  = document.querySelector('.nav__links');
+  if (!navToggle || !navLinks) return;
 
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
@@ -22,7 +20,6 @@ export function initNav() {
     navToggle.classList.toggle('open');
   });
 
-  // Close nav when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
@@ -31,7 +28,6 @@ export function initNav() {
     });
   });
 
-  // Close nav on outside click
   document.addEventListener('click', (e) => {
     if (!header.contains(e.target)) {
       navLinks.classList.remove('open');

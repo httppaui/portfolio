@@ -6,16 +6,17 @@ export function initTheme() {
 
   const root        = document.documentElement;
   const toggleBtn   = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
   const STORAGE_KEY = 'portfolio-theme';
 
-  // ─── Load saved preference or system default ───
-  const saved  = localStorage.getItem(STORAGE_KEY);
-  const system = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  const saved   = localStorage.getItem(STORAGE_KEY);
+  const system  = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   const initial = saved || system;
 
   root.setAttribute('data-theme', initial);
+  toggleBtn.setAttribute('aria-label', initial === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
 
-  // ─── Toggle on button click ───────────────
   toggleBtn.addEventListener('click', () => {
     const current = root.getAttribute('data-theme');
     const next    = current === 'dark' ? 'light' : 'dark';
@@ -24,7 +25,6 @@ export function initTheme() {
     toggleBtn.setAttribute('aria-label', next === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
   });
 
-  // ─── Respect system preference changes ────
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
     if (!localStorage.getItem(STORAGE_KEY)) {
       root.setAttribute('data-theme', e.matches ? 'dark' : 'light');

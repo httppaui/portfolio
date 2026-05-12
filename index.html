@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Personal portfolio of Paula Hewlett P. Pamittan — BSIT 4 | IT Intern" />
+  <meta property="og:title" content="Paula Hewlett P. Pamittan — Portfolio" />
+  <meta property="og:description" content="BSIT 4 student & IT intern building resilient infrastructure." />
+  <meta property="og:image" content="src/assets/images/paula-photo.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Paula Hewlett P. Pamittan — Portfolio" />
+  <meta name="twitter:description" content="BSIT 4 student & IT intern building resilient infrastructure." />
+  <meta name="twitter:image" content="src/assets/images/paula-photo.png" />
   <title>Paula Hewlett's Portfolio</title>
   <link rel="icon" href="src/assets/images/ph-logo.png" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +25,7 @@
   <link rel="stylesheet" href="src/assets/css/style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- ===== NAV ===== -->
   <header class="site-header" role="banner">
@@ -30,7 +39,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+        <li hidden><a href="#gallery">Gallery</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
@@ -70,7 +79,7 @@
           </div>
           <div class="hero__visual">
             <div class="hero__photo">
-              <img src="src/assets/images/paula-photo.png" alt="Paula Hewlett P. Pamittan" />
+              <img src="src/assets/images/paula-photo.png" alt="Paula Hewlett P. Pamittan" width="580" height="580" fetchpriority="high" />
             </div>
           </div>
         </div>
@@ -93,8 +102,8 @@
           and firewalls, as well as exploring hybrid cloud deployments on AWS. I believe good infrastructure should be invisible:
           fast, reliable, and secure. <br><br> During my free time, I study online courses through Coursera, AWS Skill Builder, 
           and Cisco Networking Academy to strengthen my technical foundation and stay current with emerging technologies. <br><br> 
-          In addition to my studies, I am honored to serve as an AWS User Group BuildHERS+ Ambassador — a role that allows me to
-          connect with peers, share knowledge, and advocate for inclusiv  ity in technology. I thrive in collaborative environments
+          In addition to my studies, I am honored to serve as an AWS User Group BuildHers+ Ambassador — a role that allows me to
+          connect with peers, share knowledge, and advocate for inclusivity in technology. I thrive in collaborative environments
           where ideas are exchanged freely.
           </p>
         </div>
@@ -130,7 +139,7 @@
               </ul>
             </div>
             <div class="skill-category">
-              <h4>Cloud (AWS)</h4>
+              <h4>AWS Fundamentals</h4>
               <ul role="list">
                 <li>EC2</li>
                 <li>VPC</li>
@@ -197,22 +206,65 @@
             <div class="experience-item">
               <div class="experience-item__header">
                 <div class="experience-item__logo">
-                  <img src="src/assets/images/tobc-logo.jpg" alt="The Online Booking Corp logo" width="48" height="48" />
+                  <img src="src/assets/images/enov-logo.jpg" alt="AWS e:Novators logo" width="48" height="48" />
                 </div>
                 <div class="experience-item__title">
-                  <h3>Information Technology Intern</h3>
-                  <p class="experience-item__company">The Online Booking Corp. <span class="experience-item__tag">· Internship</span></p>
+                  <h3>External Relations Officer</h3>
+                  <p class="experience-item__company">AWS User Group e:Novators Philippines <span class="experience-item__tag">· Full-time</span></p>
                 </div>
-                <span class="experience-item__date">Feb 2026 - Present · 3 mos</span>
+                <span class="experience-item__date">April 2026 - Present · 1 mo</span>
               </div>
               <p class="experience-item__description">
-                Supported IT operations for online booking systems, collaborated with UX and network teams, and helped maintain service reliability across the platform.
+                Responsible for building and maintaining relationships with external organizations and individuals to promote the AWS User Group e:Novators Philippines and its programs.
+              </p>
+              <div class="experience-item__skills" aria-label="Skills">
+                <span class="skill-pill">Teamwork</span>
+                <span class="skill-pill">Communication</span>
+                <span class="skill-pill">Collaboration</span>
+                <span class="skill-pill">Planning & Organization</span>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-item__header">
+                <div class="experience-item__logo">
+                  <img src="src/assets/images/gssoc-logo.jpg" alt="GSSoC logo" width="48" height="48" />
+                </div>
+                <div class="experience-item__title">
+                  <h3>GirlScript Summer of Code Ambassador</h3>
+                  <p class="experience-item__company">Girl Script Foundation<span class="experience-item__tag">· Full-time</span></p>
+                </div>
+                <span class="experience-item__date">May 2026 - Present · 3 mos</span>
+              </div>
+              <p class="experience-item__description">
+                GSSoC Ambassadors extend the program's reach by spreading awareness, hosting events, and guiding applicants at their institutions.
               </p>
               <div class="experience-item__skills" aria-label="Skills">
                 <span class="skill-pill">Teamwork</span>
                 <span class="skill-pill">User Interface Design</span>
                 <span class="skill-pill">Research</span>
                 <span class="skill-pill">Collaboration</span>
+              </div>
+            </div>
+
+            <div class="experience-item">
+              <div class="experience-item__header">
+                <div class="experience-item__logo">
+                  <img src="src/assets/images/tobc-logo.jpg" alt="The Online Booking Corp logo" width="48" height="48" />
+                </div>
+                <div class="experience-item__title">
+                  <h3>Information Technology Intern</h3>
+                  <p class="experience-item__company">The Online Booking Corp. <span class="experience-item__tag">· Internship</span></p>
+                </div>
+                <span class="experience-item__date">Feb 2026 - May 2026 · 3 mos</span>
+              </div>
+              <p class="experience-item__description">
+                Supported IT operations for online booking systems, collaborated with UX and network teams, and helped maintain service reliability across the platform.
+              </p>
+              <div class="experience-item__skills" aria-label="Skills">
+                <span class="skill-pill">Community Leadership</span>
+                <span class="skill-pill">Mentorship</span>
+                <span class="skill-pill">Outreach</span>
               </div>
             </div>
 
@@ -228,12 +280,11 @@
                 <span class="experience-item__date">Feb 2026 - Present · 3 mos</span>
               </div>
               <p class="experience-item__description">
-                Represented the AWS community through ambassador activities, organized events, and supported mentorship programs for women in technology.
+                Represented the community through ambassador activities, organized events, and supported programs for women in technology.
               </p>
               <div class="experience-item__skills" aria-label="Skills">
                 <span class="skill-pill">Community Leadership</span>
                 <span class="skill-pill">Event Support</span>
-                <span class="skill-pill">Mentorship</span>
                 <span class="skill-pill">Outreach</span>
               </div>
             </div>
@@ -248,8 +299,7 @@
             <div class="experience-item">
               <div class="experience-item__header">
                 <div class="experience-item__logo">
-                  <img src="https://scontent-mnl3-2.xx.fbcdn.net/v/t39.30808-1/627983110_1404997934971151_474847842385933652_n.jpg?stp=c96.90.882.882a_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFq2pbJ-up7dPuwkYwkn2knDy8GRaOvcKcPLwZFo69wp3un043huDfqWZtKL4zV2GPCjAQFM3Rm4E1c8omcMoQ5&_nc_ohc=jazdn29HWUEQ7kNvwFfag3X&_nc_oc=Adp2xBgoutpD4gzJlGy0TQs5dOxI5zVWPE_W-y3PqxVs7hLuQGSRudxQNhGrm1NNiio&_nc_zt=24&_nc_ht=scontent-mnl3-2.xx&_nc_gid=ZFg366O2-t1b3k3X9MseCQ&_nc_ss=7a3a8&oh=00_Af1X2rHseE92xB7e373j1rzY95ifE1rVGFRWRyXrqDO8mw&oe=69E50C5C"
-                    alt="School logo" width="48" height="48" />
+                  <img src="src/assets/images/sace logo.jpg" alt="SACE Council logo" width="48" height="48" />
                 </div>
                 <div class="experience-item__title">
                   <h3>Vice Governor for Internal Affairs</h3>
@@ -265,8 +315,7 @@
             <div class="experience-item">
               <div class="experience-item__header">
                 <div class="experience-item__logo">
-                  <img src="https://scontent-mnl1-1.xx.fbcdn.net/v/t39.30808-6/476158996_1027242892761367_8835564117689671353_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeEVTu1VIffEIbfZ8FiCRn6ueTyOyDXvwLh5PI7INe_AuEnXWdVGlYLoHnxWCY4NDFtQZz2oBEnA-uuIYcjIerQq&_nc_ohc=hIR8Xkt7j6IQ7kNvwElUDo_&_nc_oc=AdpzXytJ8C2uD-0wWH440WckIrckE-5fAcs4fd5pZHamcvOHuxDDLUccNJq_DXg0kjE&_nc_zt=23&_nc_ht=scontent-mnl1-1.xx&_nc_gid=jSIitzNtUkRulPyC9qOUxw&_nc_ss=7a3a8&oh=00_Af1tu8Qzo0Dz1Hyx9BcrSVkDBMC72ycT-utHW8ZSHVdhug&oe=69E533DC" 
-                    alt="School logo" width="48" height="48" />
+                  <img src="src/assets/images/tlc-logo.jpg" alt="The Louisian Courier logo" width="48" height="48" />
                 </div>
                 <div class="experience-item__title">
                   <h3>Junior Photojournalist</h3>
@@ -282,8 +331,7 @@
             <div class="experience-item">
               <div class="experience-item__header">
                 <div class="experience-item__logo">
-                  <img src="https://scontent-mnl3-2.xx.fbcdn.net/v/t39.30808-1/627983110_1404997934971151_474847842385933652_n.jpg?stp=c96.90.882.882a_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFq2pbJ-up7dPuwkYwkn2knDy8GRaOvcKcPLwZFo69wp3un043huDfqWZtKL4zV2GPCjAQFM3Rm4E1c8omcMoQ5&_nc_ohc=jazdn29HWUEQ7kNvwFfag3X&_nc_oc=Adp2xBgoutpD4gzJlGy0TQs5dOxI5zVWPE_W-y3PqxVs7hLuQGSRudxQNhGrm1NNiio&_nc_zt=24&_nc_ht=scontent-mnl3-2.xx&_nc_gid=ZFg366O2-t1b3k3X9MseCQ&_nc_ss=7a3a8&oh=00_Af1X2rHseE92xB7e373j1rzY95ifE1rVGFRWRyXrqDO8mw&oe=69E50C5C"
-                    alt="School logo" width="48" height="48" />
+                  <img src="src/assets/images/sace logo.jpg" alt="SACE Council logo" width="48" height="48" />
                 </div>
                 <div class="experience-item__title">
                   <h3>Vice Governor for External Affairs</h3>
@@ -299,8 +347,7 @@
             <div class="experience-item">
               <div class="experience-item__header">
                 <div class="experience-item__logo">
-                  <img src="https://scontent-mnl3-2.xx.fbcdn.net/v/t39.30808-1/627983110_1404997934971151_474847842385933652_n.jpg?stp=c96.90.882.882a_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFq2pbJ-up7dPuwkYwkn2knDy8GRaOvcKcPLwZFo69wp3un043huDfqWZtKL4zV2GPCjAQFM3Rm4E1c8omcMoQ5&_nc_ohc=jazdn29HWUEQ7kNvwFfag3X&_nc_oc=Adp2xBgoutpD4gzJlGy0TQs5dOxI5zVWPE_W-y3PqxVs7hLuQGSRudxQNhGrm1NNiio&_nc_zt=24&_nc_ht=scontent-mnl3-2.xx&_nc_gid=ZFg366O2-t1b3k3X9MseCQ&_nc_ss=7a3a8&oh=00_Af1X2rHseE92xB7e373j1rzY95ifE1rVGFRWRyXrqDO8mw&oe=69E50C5C"
-                    alt="School logo" width="48" height="48" />
+                  <img src="src/assets/images/sace logo.jpg" alt="SACE Council logo" width="48" height="48" />
                 </div>
                 <div class="experience-item__title">
                   <h3>Executive Secretary</h3>
@@ -316,8 +363,7 @@
             <div class="experience-item">
               <div class="experience-item__header">
                 <div class="experience-item__logo">
-                  <img src="https://scontent-mnl3-2.xx.fbcdn.net/v/t39.30808-1/627983110_1404997934971151_474847842385933652_n.jpg?stp=c96.90.882.882a_dst-jpg_s200x200_tt6&_nc_cat=107&ccb=1-7&_nc_sid=2d3e12&_nc_eui2=AeFq2pbJ-up7dPuwkYwkn2knDy8GRaOvcKcPLwZFo69wp3un043huDfqWZtKL4zV2GPCjAQFM3Rm4E1c8omcMoQ5&_nc_ohc=jazdn29HWUEQ7kNvwFfag3X&_nc_oc=Adp2xBgoutpD4gzJlGy0TQs5dOxI5zVWPE_W-y3PqxVs7hLuQGSRudxQNhGrm1NNiio&_nc_zt=24&_nc_ht=scontent-mnl3-2.xx&_nc_gid=ZFg366O2-t1b3k3X9MseCQ&_nc_ss=7a3a8&oh=00_Af1X2rHseE92xB7e373j1rzY95ifE1rVGFRWRyXrqDO8mw&oe=69E50C5C"
-                    alt="School logo" width="48" height="48" />
+                  <img src="src/assets/images/sace logo.jpg" alt="SACE Council logo" width="48" height="48" />
                 </div>
                 <div class="experience-item__title">
                   <h3>Assistant Creatives</h3>
@@ -351,7 +397,8 @@
 
         <div class="projects__grid" id="projects-grid" aria-live="polite" aria-label="Projects list">
 
-          <article class="project-card" data-category="academic" tabindex="0">
+          <article class="project-card" data-category="academic" tabindex="0"
+            data-images='["src/assets/images/adal-featured.jpg"]'>
             <div class="project-card__img-wrap">
               <img src="src/assets/images/adal-featured.jpg" alt="Scholarly search engine interface concept" loading="lazy" width="600" height="360" />
               <span class="project-card__tag">Academic</span>
@@ -359,11 +406,11 @@
             <div class="project-card__body">
               <h3>ADAL</h3>
               <p>An AI-enhanced literature matrix generation and academic search engine for scholarly search, designed to simplify discovery and evaluation of research papers.</p>
-              <a href="#" class="project-card__link" aria-label="View ADAL project">View Project ↗</a>
             </div>
           </article>
 
-          <article class="project-card" data-category="design" tabindex="0">
+          <article class="project-card" data-category="design" tabindex="0"
+            data-images='["src/assets/images/portfolio-featured.png"]'>
             <div class="project-card__img-wrap">
               <img src="src/assets/images/portfolio-featured.png" alt="Personal portfolio website on a laptop screen" loading="lazy" width="600" height="360" />
               <span class="project-card__tag">Design</span>
@@ -371,11 +418,11 @@
             <div class="project-card__body">
               <h3>Personal Portfolio Website</h3>
               <p>Built a responsive portfolio website to showcase projects, certifications, and professional experience using modern web design best practices.</p>
-              <a href="#" class="project-card__link" aria-label="View portfolio website project">View Project ↗</a>
             </div>
           </article>
 
         </div>
+        <p class="projects__empty" id="projects-empty" hidden>No projects in this category yet.</p>
       </div>
     </section>
 
@@ -385,6 +432,18 @@
         <span class="section-label">Credentials</span>
         <h2 id="certs-heading" class="section-heading">Certifications &amp; Achievements</h2>
         <div class="certs__grid">
+
+          <div class="cert-badge">
+            <div class="cert-badge__icon" aria-hidden="true">
+              <img src="https://avatars.githubusercontent.com/u/1916665?s=280&v=4" alt="Udacity logo" width="48" height="48" />
+            </div>
+            <div class="cert-badge__body">
+              <h3>AWS AI Practitioner Challenge</h3>
+              <p class="cert-badge__org">Udacity</p>
+              <p class="cert-badge__date">Issued: May 2026</p>
+              <a href="https://www.udacity.com/certificate/e/d7452226-28f7-11f1-8147-472f784acc03" class="cert-badge__link" target="_blank" rel="noopener noreferrer" aria-label="Verify UX Design credential">Show credential ↗</a>
+            </div>
+          </div>
 
           <div class="cert-badge">
             <div class="cert-badge__icon" aria-hidden="true">
@@ -492,9 +551,9 @@
                 aria-label="Open TESDA Computer Systems Servicing certificate"> Show credential ↗
               </a>
               <p class="cert-badge__skills">Skills: Computer Networking, Computer Hardware, +6 skills</p>
-              
             </div>
           </div>
+
 
         </div>
       </div>
@@ -502,7 +561,7 @@
 
     <!-- ===== GALLERY SECTION ===== -->
 
-<section id="gallery" class="gallery section" aria-labelledby="gallery-heading">
+<section id="gallery" class="gallery section" aria-labelledby="gallery-heading" hidden>
   <div class="container">
     <span class="section-label">Captured Moments</span>
     <h2 id="gallery-heading" class="section-heading">Gallery &amp; Events</h2>
@@ -615,7 +674,7 @@
           <p>Whether you have a project in mind, a role to fill, or just want to talk networking — my inbox is always open.</p>
           <ul class="contact__socials" role="list">
             <li>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
+              <a href="https://github.com/httppaui" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.82-.26.82-.58 0-.28-.01-1.02-.01-2-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.74.08-.73.08-.73 1.21.08 1.85 1.24 1.85 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22 0 1.61-.01 2.9-.01 3.29 0 .32.21.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
                 GitHub
               </a>
@@ -635,37 +694,6 @@
           </ul>
         </div>
 
-        <div class="contact__form-wrap">
-          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" placeholder="Your full name" aria-required="true" />
-              <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-required="true" />
-              <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or inquiry…" aria-required="true"></textarea>
-              <span class="form-error" id="message-error" role="alert" aria-live="polite"></span>
-            </div>
-            <div class="form-group form-group--checkbox">
-              <label class="checkbox-label">
-                <input type="checkbox" id="consent" name="consent" aria-required="true" />
-                <span class="checkbox-custom" aria-hidden="true"></span>
-                I consent to my data being used to respond to my inquiry.
-              </label>
-              <span class="form-error" id="consent-error" role="alert" aria-live="polite"></span>
-            </div>
-            <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-            <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
-              ✓ Message sent! I'll get back to you soon.
-            </div>
-          </form>
-        </div>
       </div>
     </section>
 
@@ -693,7 +721,34 @@
     <div class="lightbox__backdrop" id="lightbox-backdrop"></div>
   </div>
 
+  <!-- ===== PROJECT MODAL ===== -->
+  <div class="project-modal" id="project-modal" role="dialog" aria-modal="true" aria-label="Project details" hidden>
+    <div class="project-modal__backdrop" id="project-modal-backdrop"></div>
+    <div class="project-modal__content">
+      <button class="project-modal__close" id="project-modal-close" aria-label="Close">&times;</button>
+      <div class="project-modal__carousel">
+        <button class="project-modal__nav project-modal__nav--prev" id="pm-prev" aria-label="Previous image">&#8592;</button>
+        <div class="project-modal__img-wrap">
+          <img src="" alt="" class="project-modal__img" id="project-modal-img" />
+        </div>
+        <button class="project-modal__nav project-modal__nav--next" id="pm-next" aria-label="Next image">&#8594;</button>
+      </div>
+      <div class="project-modal__dots" id="pm-dots"></div>
+      <div class="project-modal__info">
+        <h3 class="project-modal__title" id="project-modal-title"></h3>
+        <p class="project-modal__desc" id="project-modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
 <script type="module" src="/src/main.js"></script>
+<noscript>
+  <style>
+    .nav__toggle, .theme-toggle, .filter-bar, .experience__tabs { display: none; }
+    .experience__panel.hidden { display: block; }
+  </style>
+  <p style="text-align:center;padding:1rem;background:#fdf8f3;color:#2c2118;">This site works best with JavaScript enabled for full interactivity.</p>
+</noscript>
 
 </body>
 </html>

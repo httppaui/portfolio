@@ -1,10 +1,9 @@
 /* =========================================
-   GALLERY.JS — Lightbox, Filter & Lazy Load
+   GALLERY.JS — Lightbox, Filter & Focus Trap
    ========================================= */
 
 export function initGallery() {
 
-  /* ── DOM refs ────────────────────────────── */
   const grid       = document.getElementById('gallery-grid');
   const lightbox   = document.getElementById('lightbox');
   const lbImg      = document.getElementById('lightbox-img');
@@ -16,39 +15,18 @@ export function initGallery() {
   const lbNext     = document.getElementById('lightbox-next');
   const filterBtns = document.querySelectorAll('.gallery__filter-btn');
 
-  if (!grid || !lightbox) return; // guard: section not on page
+  if (!grid || !lightbox) return;
 
-  /* ── State ───────────────────────────────── */
   let items        = [];
   let visible      = [];
   let currentIndex = 0;
+  let triggerEl    = null;
 
-  /* ── Build item list ─────────────────────── */
   function refreshItems() {
     items   = Array.from(grid.querySelectorAll('.gallery__item'));
     visible = items.filter(el => !el.classList.contains('gallery__item--hidden'));
   }
 
-  /* ── Lazy loading via IntersectionObserver ─ */
-  function initLazyLoad() {
-    if (!('IntersectionObserver' in window)) return;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const img = entry.target.querySelector('.gallery__img');
-        if (img && img.dataset.src) {
-          img.src = img.dataset.src;
-          img.removeAttribute('data-src');
-        }
-        observer.unobserve(entry.target);
-      });
-    }, { rootMargin: '100px' });
-
-    items.forEach(item => observer.observe(item));
-  }
-
-  /* ── Filters ─────────────────────────────── */
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
@@ -68,8 +46,18 @@ export function initGallery() {
     });
   });
 
-  /* ── Open lightbox ───────────────────────── */
+  function setPageInert(inert) {
+    ['site-header', 'main-content', 'site-footer'].forEach(sel => {
+      const el = sel === 'main-content'
+        ? document.getElementById(sel)
+        : document.querySelector(`.${sel}`);
+      if (!el) return;
+      inert ? el.setAttribute('inert', '') : el.removeAttribute('inert');
+    });
+  }
+
   function openLightbox(item) {
+    triggerEl = item;
     const img   = item.querySelector('.gallery__img');
     const label = item.querySelector('.gallery__overlay-label');
     const tag   = item.querySelector('.gallery__overlay-tag');
@@ -82,22 +70,22 @@ export function initGallery() {
     currentIndex = visible.indexOf(item);
     lightbox.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
+    setPageInert(true);
     lbClose.focus();
   }
 
-  /* ── Close lightbox ──────────────────────── */
   function closeLightbox() {
     lightbox.setAttribute('hidden', '');
     document.body.style.overflow = '';
+    setPageInert(false);
+    triggerEl?.focus();
   }
 
-  /* ── Navigate lightbox ───────────────────── */
   function navigate(dir) {
     currentIndex = (currentIndex + dir + visible.length) % visible.length;
     openLightbox(visible[currentIndex]);
   }
 
-  /* ── Item click / keyboard ───────────────── */
   grid.addEventListener('click', e => {
     const item = e.target.closest('.gallery__item');
     if (item) openLightbox(item);
@@ -110,7 +98,6 @@ export function initGallery() {
     }
   });
 
-  /* ── Lightbox controls ───────────────────── */
   lbClose.addEventListener('click', closeLightbox);
   lbBackdrop.addEventListener('click', closeLightbox);
   lbPrev.addEventListener('click', () => navigate(-1));
@@ -123,9 +110,24 @@ export function initGallery() {
     if (e.key === 'ArrowRight') navigate(1);
   });
 
-  /* ── Touch swipe support ─────────────────── */
-  let touchStartX = 0;
+  /* ── Focus trap ────────────────────────── */
+  lightbox.addEventListener('keydown', (e) => {
+    if (e.key !== 'Tab') return;
+    const focusable = Array.from(lightbox.querySelectorAll('button'));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last  = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
 
+  /* ── Touch swipe ───────────────────────── */
+  let touchStartX = 0;
   lightbox.addEventListener('touchstart', e => {
     touchStartX = e.changedTouches[0].clientX;
   }, { passive: true });
@@ -135,8 +137,6 @@ export function initGallery() {
     if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
   }, { passive: true });
 
-  /* ── Init ────────────────────────────────── */
   refreshItems();
-  initLazyLoad();
 
 }
