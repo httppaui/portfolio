@@ -9,9 +9,12 @@ import { initAnimations }   from './modules/animations.js';
 import { initExperience }   from './modules/experience.js';
 import { initGallery }      from './modules/gallery.js';
 import { initTheme }        from './modules/theme.js';
+import { initTypewriter }   from './modules/typewriter.js';
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+requestAnimationFrame(() => document.body.classList.add('is-loaded'));
 
 initTheme();
 initNav();
@@ -20,3 +23,4 @@ initProjectModal();
 initAnimations();
 initExperience();
 initGallery();
+initTypewriter();

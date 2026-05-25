@@ -21,6 +21,7 @@
     const t = localStorage.getItem('portfolio-theme') ||
       (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.classList.add('js');
   </script>
   <link rel="stylesheet" href="src/assets/css/style.css" />
 </head>
@@ -71,10 +72,11 @@
             <p class="hero__eyebrow">Hello, I'm</p>
             <h1 class="hero__name">Paula Hewlett P. Pamittan</h1>
             <p class="hero__role">4th year Bachelor of Science in Information Technology &amp; IT Intern</p>
-            <p class="hero__tagline">Building resilient infrastructure, one packet at a time.</p>
+            <p class="hero__tagline" id="hero-tagline">CODE, LEARN, LEAD</p>
             <div class="hero__cta">
               <a href="#projects" class="btn btn--primary">View My Work</a>
               <a href="#contact" class="btn btn--ghost">Get in Touch</a>
+              <a href="src/assets/docs/resume.pdf" class="btn btn--ghost" download>Download CV ↓</a>
             </div>
           </div>
           <div class="hero__visual">
@@ -90,9 +92,11 @@
       </div>
     </section>
 
+
     <!-- ===== ABOUT ===== -->
     <section id="about" class="about section" aria-labelledby="about-heading">
-      <div class="container about__inner">
+      <div class="container about__layout">
+      <div class="about__inner">
         <div class="about__text">
           <span class="section-label">About Me</span>
           <h2 id="about-heading" class="section-heading">A little about who I am</h2>
@@ -158,14 +162,6 @@
               </ul>
             </div>
             <div class="skill-category">
-              <h4>Productivity Tools</h4>
-              <ul role="list">
-                <li>Microsoft Office 365</li>
-                <li>Google Workspace</li>
-                <li>Notion</li>
-              </ul>
-            </div>
-            <div class="skill-category">
               <h4>Project Management</h4>
               <ul role="list">
                 <li>Agile</li>
@@ -186,7 +182,43 @@
           </div>
         </div>
       </div>
+
+        <div class="about__skills" aria-labelledby="tech-stack-heading">
+          <h3 id="tech-stack-heading" class="skills__heading">Tools &amp; Tech Stack</h3>
+          <div class="skills__grid">
+            <div class="skill-category">
+              <h4>Agentic AI</h4>
+              <ul role="list">
+                <li>Claude</li>
+                <li>Gemini</li>
+                <li>GitHub Copilot</li>
+                <li>Google Antigravity</li>
+                <li>Cursor</li>
+                <li>AWS Kiro</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Design &amp; Prototyping</h4>
+              <ul role="list">
+                <li>Figma</li>
+                <li>Canva</li>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h4>Productivity Tools</h4>
+              <ul role="list">
+                <li>Microsoft Office 365</li>
+                <li>Google Workspace</li>
+                <li>Notion</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
 
     <!-- ===== EXPERIENCE ===== -->
     <section id="experience" class="experience section" aria-labelledby="experience-heading">
@@ -211,8 +243,8 @@
                 <div class="experience-item__title">
                   <h3>External Relations Officer</h3>
                   <p class="experience-item__company">AWS User Group e:Novators Philippines <span class="experience-item__tag">· Full-time</span></p>
+                  <span class="experience-item__date">April 2026 - Present · 1 mo</span>
                 </div>
-                <span class="experience-item__date">April 2026 - Present · 1 mo</span>
               </div>
               <p class="experience-item__description">
                 Responsible for building and maintaining relationships with external organizations and individuals to promote the AWS User Group e:Novators Philippines and its programs.
@@ -233,8 +265,8 @@
                 <div class="experience-item__title">
                   <h3>GirlScript Summer of Code Ambassador</h3>
                   <p class="experience-item__company">Girl Script Foundation<span class="experience-item__tag">· Full-time</span></p>
+                  <span class="experience-item__date">May 2026 - Present · 3 mos</span>
                 </div>
-                <span class="experience-item__date">May 2026 - Present · 3 mos</span>
               </div>
               <p class="experience-item__description">
                 GSSoC Ambassadors extend the program's reach by spreading awareness, hosting events, and guiding applicants at their institutions.
@@ -255,16 +287,16 @@
                 <div class="experience-item__title">
                   <h3>Information Technology Intern</h3>
                   <p class="experience-item__company">The Online Booking Corp. <span class="experience-item__tag">· Internship</span></p>
+                  <span class="experience-item__date">Feb 2026 - May 2026 · 3 mos</span>
                 </div>
-                <span class="experience-item__date">Feb 2026 - May 2026 · 3 mos</span>
               </div>
               <p class="experience-item__description">
-                Supported IT operations for online booking systems, collaborated with UX and network teams, and helped maintain service reliability across the platform.
+                Supported IT operations for online booking systems, collaborated with development and design teams, and helped maintain service reliability across the platform.
               </p>
               <div class="experience-item__skills" aria-label="Skills">
-                <span class="skill-pill">Community Leadership</span>
-                <span class="skill-pill">Mentorship</span>
-                <span class="skill-pill">Outreach</span>
+                <span class="skill-pill">UI/UX Design</span>
+                <span class="skill-pill">Graphic Design</span>
+                <span class="skill-pill">Communication</span>
               </div>
             </div>
 
@@ -276,8 +308,8 @@
                 <div class="experience-item__title">
                   <h3>AWS User Group BuildHers+ Ambassador</h3>
                   <p class="experience-item__company">AWS User Group BuildHers+ Philippines <span class="experience-item__tag">· Full-time</span></p>
+                  <span class="experience-item__date">Feb 2026 - Present · 3 mos</span>
                 </div>
-                <span class="experience-item__date">Feb 2026 - Present · 3 mos</span>
               </div>
               <p class="experience-item__description">
                 Represented the community through ambassador activities, organized events, and supported programs for women in technology.
@@ -304,8 +336,8 @@
                 <div class="experience-item__title">
                   <h3>Vice Governor for Internal Affairs</h3>
                   <p class="experience-item__company">SACE Council<span class="experience-item__tag">· University of Saint Louis Tuguegarao</span></p>
+                  <span class="experience-item__date">Jun 2024 - Jun 2025 · 1 yr</span>
                 </div>
-                <span class="experience-item__date">Jun 2024 - Jun 2025 · 1 yr</span>
               </div>
               <p class="experience-item__description">
                 Oversaw the internal operations and cohesion of the SACE Council, ensuring that our initiatives, communications, and member engagements run smoothly and align with our shared goals.
@@ -320,8 +352,8 @@
                 <div class="experience-item__title">
                   <h3>Junior Photojournalist</h3>
                   <p class="experience-item__company">The Louisian Courier <span class="experience-item__tag">· University of Saint Louis Tuguegarao</span></p>
+                  <span class="experience-item__date">Jun 2024 - Jun 2025 · 1 yr</span>
                 </div>
-                <span class="experience-item__date">Jun 2024 - Jun 2025 · 1 yr</span>
               </div>
               <p class="experience-item__description">
                 Contributed visual narratives that captured the pulse of campus life and student perspectives. I documented events, crafted emotionally resonant imagery.
@@ -336,8 +368,8 @@
                 <div class="experience-item__title">
                   <h3>Vice Governor for External Affairs</h3>
                   <p class="experience-item__company">SACE Council <span class="experience-item__tag">· University of Saint Louis Tuguegarao</span></p>
+                  <span class="experience-item__date">Sep 2023 - Jun 2024 · 10 mo</span>
                 </div>
-                <span class="experience-item__date">Sep 2023 - Jun 2024 · 10 mo</span>
               </div>
               <p class="experience-item__description">
                 Served as the primary liaison between the SACE Council and external organizations, academic institutions, and community partners. My role focused on cultivating strategic relationships, initiating collaborative projects, and representing the council in inter-organizational dialogues.              
@@ -352,8 +384,8 @@
                 <div class="experience-item__title">
                   <h3>Executive Secretary</h3>
                   <p class="experience-item__company">SACE Council <span class="experience-item__tag">· University of Saint Louis Tuguegarao</span></p>
+                  <span class="experience-item__date">Jun 2023 - Sep 2023 · 4 mo</span>
                 </div>
-                <span class="experience-item__date">Jun 2023 - Sep 2023 · 4 mo</span>
               </div>
               <p class="experience-item__description">
                 Managed documentation, coordinated meeting agendas, and ensured timely dissemination of information across organizations of the department, which led to my subsequent appointment as Vice Governor for External Affairs.
@@ -368,8 +400,8 @@
                 <div class="experience-item__title">
                   <h3>Assistant Creatives</h3>
                   <p class="experience-item__company">SACE Council <span class="experience-item__tag">· University of Saint Louis Tuguegarao</span></p>
+                  <span class="experience-item__date">Aug 2022 - Jun 2023 · 11 mo</span>
                 </div>
-                <span class="experience-item__date">Aug 2022 - Jun 2023 · 11 mo</span>
               </div>
               <p class="experience-item__description">
                 Entrusted with the conceptualization and execution of digital creative assets that shaped the SACE Council’s visual identity and event presence.
@@ -381,6 +413,7 @@
 
       </div>
     </section>
+
 
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="projects section" aria-labelledby="projects-heading">
@@ -399,25 +432,40 @@
 
           <article class="project-card" data-category="academic" tabindex="0"
             data-images='["src/assets/images/adal-featured.jpg"]'>
-            <div class="project-card__img-wrap">
+            <div class="project-card__img-wrap shimmer">
               <img src="src/assets/images/adal-featured.jpg" alt="Scholarly search engine interface concept" loading="lazy" width="600" height="360" />
               <span class="project-card__tag">Academic</span>
+              <div class="project-card__hint" aria-hidden="true">Click to view</div>
             </div>
             <div class="project-card__body">
               <h3>ADAL</h3>
+              <p class="project-card__role">Team Leader &amp; Researcher</p>
               <p>An AI-enhanced literature matrix generation and academic search engine for scholarly search, designed to simplify discovery and evaluation of research papers.</p>
+              <div class="project-card__stack">
+                <span class="stack-pill">Project Manager</span>
+                <span class="stack-pill">Researcher</span>
+                <span class="stack-pill">UI/UX Designer</span>
+              </div>
             </div>
           </article>
 
           <article class="project-card" data-category="design" tabindex="0"
             data-images='["src/assets/images/portfolio-featured.png"]'>
-            <div class="project-card__img-wrap">
+            <div class="project-card__img-wrap shimmer">
               <img src="src/assets/images/portfolio-featured.png" alt="Personal portfolio website on a laptop screen" loading="lazy" width="600" height="360" />
               <span class="project-card__tag">Design</span>
+              <div class="project-card__hint" aria-hidden="true">Click to view</div>
             </div>
             <div class="project-card__body">
               <h3>Personal Portfolio Website</h3>
+              <p class="project-card__role">Designer &amp; Developer</p>
               <p>Built a responsive portfolio website to showcase projects, certifications, and professional experience using modern web design best practices.</p>
+              <div class="project-card__stack">
+                <span class="stack-pill">HTML</span>
+                <span class="stack-pill">CSS</span>
+                <span class="stack-pill">JavaScript</span>
+                <span class="stack-pill">Vite</span>
+              </div>
             </div>
           </article>
 
@@ -425,6 +473,7 @@
         <p class="projects__empty" id="projects-empty" hidden>No projects in this category yet.</p>
       </div>
     </section>
+
 
     <!-- ===== CERTIFICATIONS ===== -->
     <section id="certifications" class="certifications section" aria-labelledby="certs-heading">
@@ -686,9 +735,9 @@
               </a>
             </li>
             <li>
-              <a href="mailto:phpamittanp@gmail.com" aria-label="Send email to phpamittanp@gmail.com">
+              <a href="mailto:phpamittanp@gmail.com" aria-label="Send email">
                 <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                Email 
+                phpamittanp@gmail.com
               </a>
             </li>
           </ul>
@@ -702,7 +751,6 @@
   <footer class="site-footer" role="contentinfo">
     <div class="container site-footer__inner">
       <p>© <span id="year"></span> Paula Hewlett P. Pamittan. Built with care.</p>
-      <a href="#hero" class="back-to-top" aria-label="Back to top">↑ Top</a>
     </div>
   </footer>
 
@@ -749,6 +797,14 @@
   </style>
   <p style="text-align:center;padding:1rem;background:#fdf8f3;color:#2c2118;">This site works best with JavaScript enabled for full interactivity.</p>
 </noscript>
+
+<button class="back-to-top-float" id="back-to-top" aria-label="Back to top" hidden>
+  <svg class="back-to-top-float__progress" width="44" height="44" viewBox="0 0 44 44">
+    <circle class="back-to-top-float__track" cx="22" cy="22" r="20" />
+    <circle class="back-to-top-float__bar" id="scroll-progress" cx="22" cy="22" r="20" />
+  </svg>
+  <span class="back-to-top-float__icon" aria-hidden="true">↑</span>
+</button>
 
 </body>
 </html>
