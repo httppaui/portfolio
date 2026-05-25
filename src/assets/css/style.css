@@ -861,6 +861,15 @@ body.is-loaded { opacity: 1; transition: opacity .4s ease; }
   gap: var(--space-md);
 }
 
+.certs__toggle {
+  display: block;
+  margin: var(--space-lg) auto 0;
+}
+
+.certs__grid:not(.is-expanded) .cert-badge--extra {
+  display: none;
+}
+
 .cert-badge {
   display: flex;
   gap: var(--space-md);

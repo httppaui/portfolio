@@ -11,6 +11,7 @@ import { initGallery }      from './modules/gallery.js';
 import { initTheme }        from './modules/theme.js';
 import { initTypewriter }   from './modules/typewriter.js';
 import { initAbout }        from './modules/about.js';
+import { initCerts }        from './modules/certs.js';
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -26,3 +27,4 @@ initExperience();
 initGallery();
 initTypewriter();
 initAbout();
+initCerts();

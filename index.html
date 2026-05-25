@@ -557,9 +557,9 @@
       <div class="container">
         <span class="section-label">Credentials</span>
         <h2 id="certs-heading" class="section-heading">Certifications &amp; Achievements</h2>
-        <div class="certs__grid">
+        <div class="certs__grid" id="certs-grid">
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--featured">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://avatars.githubusercontent.com/u/1916665?s=280&v=4" alt="Udacity logo" width="48" height="48" />
             </div>
@@ -571,7 +571,7 @@
             </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--featured">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS logo" width="48" height="48" />
             </div>
@@ -583,7 +583,7 @@
             </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--featured">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS logo" width="48" height="48" />
             </div>
@@ -594,7 +594,7 @@
               <a href="src/assets/docs/aws-cloud-essentials.pdf" class="cert-badge__link" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Cloud Essentials certificate"> Show credential ↗ </a>            </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--featured">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr5zgKa74jwa2DyzAIwDSg_9UEhNqIqlaMuQ&s" alt="ITIL logo" width="48" height="48" />
             </div>
@@ -606,7 +606,7 @@
             </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--featured">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS logo" width="48" height="48" />
             </div>
@@ -617,7 +617,7 @@
               <a href="src/assets/docs/aws-technical-essentials.pdf" class="cert-badge__link" target="_blank" rel="noopener noreferrer" aria-label="Open AWS Technical Essentials certificate">Show credential ↗</a>            </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--extra">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/3840px-Cisco_academy_logo.svg.png" alt="Cisco logo" width="48" height="48" />
             </div>
@@ -629,7 +629,7 @@
               <a href="https://coursera.org/share/e30774776b43f78b78c7d3036a6e7aef" class="cert-badge__link" target="_blank" rel="noopener noreferrer" aria-label="Verify Network Architecture Fundamentals credential">Show credential ↗</a>            </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--extra">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Cisco_academy_logo.svg/3840px-Cisco_academy_logo.svg.png" alt="Cisco logo" width="48" height="48" />
             </div>
@@ -640,7 +640,7 @@
               <a href="https://www.credly.com/badges/fd001251-f3f5-4a7b-9a2f-3d796035f164/public_url" class="cert-badge__link" target="_blank" rel="noopener noreferrer" aria-label="Verify Hardware and Upgrade Support credential">Show credential ↗</a>            </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--extra">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google logo" width="48" height="48" />
             </div>
@@ -652,7 +652,7 @@
               <a href="https://coursera.org/share/671c41301a3463fb3aadb288e83be0e6" class="cert-badge__link" target="_blank" rel="noopener noreferrer" aria-label="Verify Technical Support Fundamentals credential">Show credential ↗</a>            </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--extra">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google logo" width="48" height="48" />
             </div>
@@ -665,7 +665,7 @@
             </div>
           </div>
 
-          <div class="cert-badge">
+          <div class="cert-badge cert-badge--featured">
             <div class="cert-badge__icon" aria-hidden="true">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwuVyQRt86sC16NC44zcuRihkuDXopE5PB6w&s" alt="TESDA logo" width="48" height="48" />
             </div>
@@ -682,6 +682,7 @@
 
 
         </div>
+        <button type="button" class="certs__toggle btn btn--ghost" id="certs-toggle" aria-expanded="false" aria-controls="certs-grid">View all credentials</button>
       </div>
     </section>
 
