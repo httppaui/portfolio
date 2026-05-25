@@ -717,6 +717,19 @@ body.is-loaded { opacity: 1; transition: opacity .4s ease; }
   transform: scale(1.04);
 }
 
+.project-card__tags {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  align-items: flex-end;
+  z-index: 1;
+}
+.project-card__tags .project-card__tag {
+  position: static;
+}
 .project-card__tag {
   position: absolute;
   top: var(--space-sm); right: var(--space-sm);

@@ -22,7 +22,8 @@ export function initProjects() {
 
       let visibleCount = 0;
       projectCards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
+        const categories = (card.dataset.category || '').trim().split(/\s+/);
+        const match = filter === 'all' || categories.includes(filter);
         card.classList.toggle('hidden', !match);
         if (match) visibleCount++;
       });
