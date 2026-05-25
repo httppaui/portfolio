@@ -658,6 +658,16 @@ body.is-loaded { opacity: 1; transition: opacity .4s ease; }
   font-weight: 700;
 }
 
+.skills__toggle {
+  display: block;
+  margin: 0 auto;
+  grid-column: 1 / -1;
+}
+
+.skills__grid:not(.is-expanded) .skill-category--extra {
+  display: none;
+}
+
 .about__skills + .about__skills {
   margin-top: var(--space-2xl);
   padding-top: var(--space-2xl);
