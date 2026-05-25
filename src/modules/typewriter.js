@@ -10,10 +10,10 @@ export function initTypewriter() {
   if (!el) return;
 
   const phrases = [
-    'CODE, LEARN, LEAD',
-    'Code with purpose.',
-    'Learn without limits.',
-    'Lead through innovation.',
+    'Design. Build. Support.',
+    'UI that feels effortless.',
+    'Apps that ship as MVPs.',
+    'Cloud-ready foundations.',
   ];
 
   let phraseIdx = 0;
