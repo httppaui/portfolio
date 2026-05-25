@@ -37,7 +37,7 @@ export function initProjectModal() {
 
     currentIdx = 0;
     titleEl.textContent = card.querySelector('.project-card__body h3')?.textContent || '';
-    descEl.textContent  = card.querySelector('.project-card__body p')?.textContent || '';
+    descEl.textContent  = card.querySelector('.project-card__body p:not(.project-card__role)')?.textContent || '';
     img.alt = card.querySelector('.project-card__img-wrap img')?.alt || '';
 
     dotsWrap.innerHTML = '';
