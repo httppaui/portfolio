@@ -138,7 +138,8 @@ portfolio/
 3. **Projects** — Add `<article class="project-card">` blocks with a `data-images` JSON array for carousel photos.
 4. **Certifications** — Add `<div class="cert-badge">` blocks in the Certifications section.
 5. **Social links** — Update the `href` attributes in `.contact__socials`.
-6. **OG / Twitter meta** — Update `og:image` and `twitter:image` to absolute URLs after deploying.
+6. **Site URL** — Update `SITE_URL` in `src/config/site-url.js` and OG meta tags if your live domain differs from GitHub Pages.
+7. **Images** — Run `npm run optimize-images` after adding new PNG screenshots in `tobc/`, `cafelog/`, or `one-pagers/`.
 
 ---
 
