@@ -10,6 +10,7 @@ import { initExperience }   from './modules/experience.js';
 import { initGallery }      from './modules/gallery.js';
 import { initTheme }        from './modules/theme.js';
 import { initTypewriter }   from './modules/typewriter.js';
+import { initAbout }        from './modules/about.js';
 
 const yearEl = document.getElementById('year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -24,3 +25,4 @@ initAnimations();
 initExperience();
 initGallery();
 initTypewriter();
+initAbout();
