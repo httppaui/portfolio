@@ -1585,8 +1585,16 @@ body.is-loaded { opacity: 1; transition: opacity .4s ease; }
 .contact__info .section-heading { margin-bottom: var(--space-md); }
 .contact__info p {
   color: var(--clr-text-muted);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-md);
   line-height: 1.7;
+}
+.contact__location {
+  font-size: .95rem;
+  color: var(--clr-text-muted);
+  margin-bottom: var(--space-lg);
+}
+.contact__email {
+  margin-bottom: var(--space-xl);
 }
 
 .contact__socials {
