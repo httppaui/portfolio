@@ -798,6 +798,17 @@ body.is-loaded { opacity: 1; transition: opacity .4s ease; }
   margin-bottom: var(--space-xs);
 }
 
+.project-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+.project-card__actions .btn {
+  font-size: .8rem;
+  padding: .4rem 1rem;
+}
+
 .project-card__stack {
   display: flex;
   flex-wrap: wrap;

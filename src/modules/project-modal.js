@@ -116,8 +116,15 @@ export function initProjectModal() {
 
   /* ── Attach to project cards ───────────── */
   document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => open(card));
+    card.querySelectorAll('.project-card__repo').forEach(link => {
+      link.addEventListener('click', (e) => e.stopPropagation());
+    });
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.project-card__repo')) return;
+      open(card);
+    });
     card.addEventListener('keydown', (e) => {
+      if (e.target.closest('.project-card__repo')) return;
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
         open(card);
