@@ -28,6 +28,21 @@
     document.documentElement.classList.add('js');
   </script>
   <link rel="stylesheet" href="src/assets/css/style.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Paula Hewlett P. Pamittan",
+    "jobTitle": "IT Intern",
+    "url": "https://httppaui.github.io/portfolio/",
+    "image": "https://httppaui.github.io/portfolio/src/assets/images/paula-photo.png",
+    "email": "phpamittanp@gmail.com",
+    "sameAs": [
+      "https://github.com/httppaui",
+      "https://www.linkedin.com/in/paulahewlett/"
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -35,7 +50,9 @@
   <!-- ===== NAV ===== -->
   <header class="site-header" role="banner">
     <nav class="nav container" aria-label="Primary navigation">
-      <a class="nav__logo" href="#hero">PH</a>
+      <a class="nav__logo" href="#hero" aria-label="Home">
+        <img src="src/assets/images/ph-logo.png" alt="" width="36" height="36" />
+      </a>
       <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
         <span></span><span></span><span></span>
       </button>
@@ -79,7 +96,6 @@
             <p class="hero__tagline" id="hero-tagline">Design. Build. Support.</p>
             <div class="hero__cta">
               <a href="#projects" class="btn btn--primary">View My Work</a>
-              <a href="#contact" class="btn btn--ghost">Get in Touch</a>
               <a href="src/assets/docs/resume.pdf" class="btn btn--ghost" download>Download CV ↓</a>
             </div>
           </div>
@@ -240,7 +256,7 @@
                 </div>
                 <div class="experience-item__title">
                   <h3>External Relations Officer</h3>
-                  <p class="experience-item__company">AWS User Group e:Novators Philippines <span class="experience-item__tag">· Full-time</span></p>
+                  <p class="experience-item__company">AWS User Group e:Novators Philippines <span class="experience-item__tag">· Community</span></p>
                   <span class="experience-item__date">April 2026 - Present · 1 mo</span>
                 </div>
               </div>
@@ -262,7 +278,7 @@
                 </div>
                 <div class="experience-item__title">
                   <h3>GirlScript Summer of Code Ambassador</h3>
-                  <p class="experience-item__company">Girl Script Foundation<span class="experience-item__tag">· Full-time</span></p>
+                  <p class="experience-item__company">Girl Script Foundation<span class="experience-item__tag">· Community</span></p>
                   <span class="experience-item__date">May 2026 - Present · 3 mos</span>
                 </div>
               </div>
@@ -305,7 +321,7 @@
                 </div>
                 <div class="experience-item__title">
                   <h3>AWS User Group BuildHers+ Ambassador</h3>
-                  <p class="experience-item__company">AWS User Group BuildHers+ Philippines <span class="experience-item__tag">· Full-time</span></p>
+                  <p class="experience-item__company">AWS User Group BuildHers+ Philippines <span class="experience-item__tag">· Community</span></p>
                   <span class="experience-item__date">Feb 2026 - Present · 3 mos</span>
                 </div>
               </div>
@@ -439,7 +455,7 @@
             <div class="project-card__body">
               <h3>ADAL</h3>
               <p class="project-card__role">Team Leader &amp; Researcher</p>
-              <p>An AI-enhanced literature matrix generation and academic search engine for scholarly search, designed to simplify discovery and evaluation of research papers.</p>
+              <p class="project-card__desc">An AI-enhanced literature matrix generation and academic search engine for scholarly search, designed to simplify discovery and evaluation of research papers.</p>
               <div class="project-card__stack">
                 <span class="stack-pill">Project Manager</span>
                 <span class="stack-pill">Researcher</span>
@@ -458,7 +474,7 @@
             <div class="project-card__body">
               <h3>Personal Portfolio Website</h3>
               <p class="project-card__role">Designer &amp; Developer</p>
-              <p>Built a responsive portfolio website to showcase projects, certifications, and professional experience using modern web design best practices.</p>
+              <p class="project-card__desc">Built a responsive portfolio website to showcase projects, certifications, and professional experience using modern web design best practices.</p>
               <div class="project-card__stack">
                 <span class="stack-pill">HTML</span>
                 <span class="stack-pill">CSS</span>
@@ -484,7 +500,7 @@
             <div class="project-card__body">
               <h3>Cafelog</h3>
               <p class="project-card__role">Designer &amp; Developer</p>
-              <p>A personal coffee journal website to take down notes and thoughts about the coffee I drink.</p>
+              <p class="project-card__desc">A personal coffee journal web app with diary entries, mood-based suggestions, flavor profiles, calendar view, and a notepad — built to capture tasting notes and café experiences.</p>
               <div class="project-card__stack">
                 <span class="stack-pill">HTML</span>
                 <span class="stack-pill">CSS</span>
@@ -507,9 +523,11 @@
             <div class="project-card__body">
               <h3>One-pager Graphic Material</h3>
               <p class="project-card__role">IT Intern · Graphic Design</p>
-              <p>Created one-pager graphic materials for TOBC Partners to showcase their services and offerings.</p>
+              <p class="project-card__desc">Created one-pager graphic materials for TOBC Partners to showcase their services and offerings.</p>
               <div class="project-card__stack">
                 <span class="stack-pill">Canva</span>
+                <span class="stack-pill">Adobe Illustrator</span>
+                <span class="stack-pill">Adobe Photoshop</span>
               </div>
               <div class="project-card__actions">
                 <a href="https://github.com/httppaui/tobc-rework-personal" class="btn btn--ghost project-card__repo" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -527,7 +545,7 @@
             <div class="project-card__body">
               <h3>The Online Booking Corp. Website Redesign</h3>
               <p class="project-card__role">IT Intern · UI/UX &amp; Full-Stack MVP</p>
-              <p>Built and redesigned the TOBC maritime training booking platform as a working MVP — modern teal-and-orange UI plus functional flows for course search, featured courses, booking steps, FAQs, and partner conversion pages.</p>
+              <p class="project-card__desc">Built and redesigned the TOBC maritime training booking platform as a working MVP — modern teal-and-orange UI plus functional flows for course search, featured courses, booking steps, FAQs, and partner conversion pages.</p>
               <div class="project-card__stack">
                 <span class="stack-pill">MVP</span>
                 <span class="stack-pill">React</span>
@@ -740,7 +758,7 @@
  
       <!-- Item 5 — wide -->
       <div class="gallery__item gallery__item--wide" data-category="org" tabindex="0" role="button" aria-label="Open photo: Leadership Camp">
-        <img src="src/assets/gallery/leadership-camp.jpg" alt="Leadership camp group photo" loading="lazy" class="gallery__img" />
+        <img src="src/assets/images/portfolio-featured.png" alt="Leadership camp group photo" loading="lazy" class="gallery__img" />
         <div class="gallery__overlay">
           <span class="gallery__overlay-label">Leadership Camp</span>
           <span class="gallery__overlay-tag">Organization</span>
@@ -749,7 +767,7 @@
  
       <!-- Item 6 -->
       <div class="gallery__item" data-category="personal" tabindex="0" role="button" aria-label="Open photo: Birthday Celebration">
-        <img src="src/assets/gallery/birthday.jpg" alt="Birthday celebration" loading="lazy" class="gallery__img" />
+        <img src="src/assets/images/cafelog/cafelog-01-diary.webp" alt="Birthday celebration" loading="lazy" class="gallery__img" />
         <div class="gallery__overlay">
           <span class="gallery__overlay-label">Birthday Celebration</span>
           <span class="gallery__overlay-tag">Personal</span>
@@ -758,7 +776,7 @@
  
       <!-- Item 7 -->
       <div class="gallery__item" data-category="org" tabindex="0" role="button" aria-label="Open photo: Hackathon 2025">
-        <img src="src/assets/gallery/hackathon.jpg" alt="Hackathon 2025 team" loading="lazy" class="gallery__img" />
+        <img src="src/assets/images/tobc/tobc-01-hero.webp" alt="Hackathon 2025 team" loading="lazy" class="gallery__img" />
         <div class="gallery__overlay">
           <span class="gallery__overlay-label">Hackathon 2025</span>
           <span class="gallery__overlay-tag">Organization</span>
@@ -767,7 +785,7 @@
  
       <!-- Item 8 — tall -->
       <div class="gallery__item gallery__item--tall" data-category="academic" tabindex="0" role="button" aria-label="Open photo: Internship Day">
-        <img src="src/assets/gallery/internship.jpg" alt="Internship first day" loading="lazy" class="gallery__img" />
+        <img src="src/assets/images/tobc/tobc-05-featured-courses.webp" alt="Internship first day" loading="lazy" class="gallery__img" />
         <div class="gallery__overlay">
           <span class="gallery__overlay-label">Internship Day</span>
           <span class="gallery__overlay-tag">Academic</span>
@@ -776,7 +794,7 @@
  
       <!-- Item 9 -->
       <div class="gallery__item" data-category="personal" tabindex="0" role="button" aria-label="Open photo: Road Trip">
-        <img src="src/assets/gallery/roadtrip.jpg" alt="Road trip with friends" loading="lazy" class="gallery__img" />
+        <img src="src/assets/images/one-pagers/onepager-lighthouse.webp" alt="Road trip with friends" loading="lazy" class="gallery__img" />
         <div class="gallery__overlay">
           <span class="gallery__overlay-label">Road Trip</span>
           <span class="gallery__overlay-tag">Personal</span>

@@ -221,13 +221,16 @@ body.is-loaded { opacity: 1; transition: opacity .4s ease; }
 }
 
 .nav__logo {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--clr-accent);
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: -.02em;
   flex-shrink: 0;
+  border-radius: var(--radius-sm);
+}
+.nav__logo img {
+  width: 2.25rem;
+  height: 2.25rem;
+  object-fit: contain;
 }
 
 .nav__links {
