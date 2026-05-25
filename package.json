@@ -5,12 +5,20 @@
   "scripts": {
     "dev": "vite --port 3000 --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "optimize-images": "node scripts/optimize-images.mjs"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
     "vite": "^6.0.0"
   },
-  "keywords": ["portfolio", "static", "html", "css", "javascript"],
+  "keywords": [
+    "portfolio",
+    "static",
+    "html",
+    "css",
+    "javascript"
+  ],
   "author": "Paula Hewlett P. Pamittan",
   "license": "MIT"
 }
